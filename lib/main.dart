@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami/onboarding_screen/OnBoardingPage.dart';
+import 'routes/AppRouter.dart';
 
 void main(){
   runApp(MyApp());
@@ -10,7 +10,9 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const OnBoardingPage(),
+      // routing
+      initialRoute: AppRouter().onBoardingRoute(),
+      routes: AppRouter().routes(),
     );
   }
 }

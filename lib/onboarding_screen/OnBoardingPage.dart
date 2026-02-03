@@ -1,9 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:islami/routes/AppRouter.dart';
 import 'package:islami/style/AppColors.dart';
 
 class OnBoardingPage extends StatefulWidget {
+  static String routeName = "/onboarding";
+
   const OnBoardingPage({super.key});
 
   @override
@@ -15,13 +18,13 @@ class OnBoardingPageState extends State<OnBoardingPage> {
 
   void _onIntroEnd(BuildContext context) {
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => TestScreen()),
+      MaterialPageRoute(builder: (_) => AppRouter().homeScreenRouteWidget()),
     );
   }
 
   Image _onBoardingLogo() {
     return Image.asset(
-      "assets/images/onboarding_logo.png",
+      "assets/images/app_logo.png",
       width: 291,
     );
   }
@@ -223,13 +226,4 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class TestScreen extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Test"),
-      ),
-    );
-  }
-}
+
