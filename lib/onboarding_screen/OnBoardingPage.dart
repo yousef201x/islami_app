@@ -17,9 +17,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(BuildContext context) {
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => AppRouter().homeScreenRouteWidget()),
-    );
+    Navigator.of(context).pushReplacementNamed(AppRouter.mainLayoutRoute);
   }
 
   Image _onBoardingLogo() {
